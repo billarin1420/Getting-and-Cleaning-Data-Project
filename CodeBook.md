@@ -27,8 +27,11 @@ set_subject: Output dataset that includes for each of the 10,299 observations wh
 The next transformation conducted was to leave only the variables associated to mean and the standard deviation, getting the following dataset:
 
 * subset_mean_std: Output dataset including for each of the 10,299 observations only the variables having to do with the mean and standard deviation. This dataset is a dataframe of 10,299 rows and 66 columns.
+
 After previous transformation, the data_y dataset is transformed to give every observation the proper naming (ie. walking, walking_upstairs, walking_downstairs, sitting, standing, laying)based on the activities coding.  This dataset is a table of 10,299 rows and 1 column.
+
 Up to this point there are three different datasets as follows: set_subject (10,299 x 1), subset_mean_std (10,299 x 66) and data_y (10,299 x 1).
+
 The last step to get one of the tidy datasets (ie. final_set) is to merge the three datasets mentioned above into one and give the proper naming format; for the latter, proper naming was giving to variables, for instance “Acc” was changed for “Acceleration”, “Mag” for “Magnitud” and so forth, getting the following dataset:
 
 * final_set:  One of the final datasets for the project which has 10,299 observations for 68 variables (ie. 66 features associated to mean and standard deviation plus the volunteers id and the activities name). This dataset is a dataframe of 10,299 rows and 68 columns, below the names of each column, naming has been given so that it self-explains as follows:
