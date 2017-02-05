@@ -22,14 +22,14 @@ data_y: Output dataset that includes for each of the 10,299 observations what ac
 * 5: standing
 * 6: laying
 
-set_subject: Output dataset that includes for each of the 10,299 observations what volunteer were conducting the observation. Volunteers are code from 1 to 30. This dataset is a dataframe with 10,299 rows and 1 column.
+set_subject: Output dataset that includes for each of the 10,299 observations what volunteer was conducting the observation. Volunteers are code from 1 to 30. This dataset is a dataframe with 10,299 rows and 1 column.
 
 The next transformation conducted was to leave only the variables associated to mean and the standard deviation, getting the following dataset:
 
 * subset_mean_std: Output dataset including for each of the 10,299 observations only the variables having to do with the mean and standard deviation. This dataset is a dataframe of 10,299 rows and 66 columns.
 After previous transformation, the data_y dataset is transformed to give every observation the proper naming (ie. walking, walking_upstairs, walking_downstairs, sitting, standing, laying)based on the activities coding.  This dataset is a table of 10,299 rows and 1 column.
 Up to this point there are three different datasets as follows: set_subject (10,299 x 1), subset_mean_std (10,299 x 66) and data_y (10,299 x 1).
-The last step to get one of the tidy datasets (ie. final_set) is to merge the three datasets mentioned above into one and give the proper naming format; for the latter proper naming was giving to variables, for instance “Acc” was changed for “Acceleration”, “Mag” for “Magnitud” and so forth, getting the following dataset:
+The last step to get one of the tidy datasets (ie. final_set) is to merge the three datasets mentioned above into one and give the proper naming format; for the latter, proper naming was giving to variables, for instance “Acc” was changed for “Acceleration”, “Mag” for “Magnitud” and so forth, getting the following dataset:
 
 * final_set:  One of the final datasets for the project which has 10,299 observations for 68 variables (ie. 66 features associated to mean and standard deviation plus the volunteers id and the activities name). This dataset is a dataframe of 10,299 rows and 68 columns, below the names of each column, naming has been given so that it self-explains as follows:
 
@@ -93,14 +93,14 @@ The last step to get one of the tidy datasets (ie. final_set) is to merge the th
 * [58] "FrequencyDomain.BodyAngularSpeed.StandardDeviation...Z"                  
 * [59] "FrequencyDomain.BodyAccelerationMagnitude.Mean.."                        
 * [60] "FrequencyDomain.BodyAccelerationMagnitude.StandardDeviation.."           
-* [61] "FrequencyDomain.BodyBodyAccelerationJerkMagnitude.Mean.."                
-* [62] "FrequencyDomain.BodyBodyAccelerationJerkMagnitude.StandardDeviation.."   
-* [63] "FrequencyDomain.BodyBodyAngularSpeedMagnitude.Mean.."                    
-* [64] "FrequencyDomain.BodyBodyAngularSpeedMagnitude.StandardDeviation.."       
-* [65] "FrequencyDomain.BodyBodyAngularAccelerationMagnitude.Mean.."             
-* [66] "FrequencyDomain.BodyBodyAngularAccelerationMagnitude.StandardDeviation.."
+* [61] "FrequencyDomain.BodyAccelerationJerkMagnitude.Mean.."                
+* [62] "FrequencyDomain.BodyAccelerationJerkMagnitude.StandardDeviation.."   
+* [63] "FrequencyDomain.BodyAngularSpeedMagnitude.Mean.."                    
+* [64] "FrequencyDomain.BodyAngularSpeedMagnitude.StandardDeviation.."       
+* [65] "FrequencyDomain.BodyAngularAccelerationMagnitude.Mean.."             
+* [66] "FrequencyDomain.BodyAngularAccelerationMagnitude.StandardDeviation.."
 * [67] "Activities"                                                              
 * [68] "Subject"
 
-The second tidy dataset is obtained by taking the final_set dataset and taking the average for every single variable for each activity and each subject. This dataset is a table of 180 rows and 68 columns. The name of this tidy dataset is final_set_averages
+The second tidy dataset (ie. the one that should be submitted as deliverable for the project) is obtained by taking the final_set dataset and taking the average for every single variable for each activity and each subject. This dataset is a table of 180 rows and 68 columns. The name of this tidy dataset is final_set_averages
  
