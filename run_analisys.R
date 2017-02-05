@@ -57,13 +57,13 @@ names(final_set) <- gsub('\\.std',".StandardDeviation",names(final_set))
 names(final_set) <- gsub('Freq\\.',"Frequency.",names(final_set))
 names(final_set) <- gsub('Freq$',"Frequency",names(final_set))
 View (final_set)
-write.csv(final_set, file = "final_set.csv")
+write.table(final_set, file = "final_set.txt", row.names=FALSE)
 
 ## 5) From the data set in step 4 this routine creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 final_set_averages<-aggregate(. ~Subject + Activities, data=final_set, FUN=mean)
 final_set_averages<-final_set_averages[order(final_set_averages$Subject,final_set_averages$Activities),]
 View (final_set_averages)
-write.csv(final_set_averages, file = "final_set_averages.csv")
+write.csv(final_set_averages, file = "final_set_averages.txt", row.names=FALSE)
 
-## End of script
+## End
