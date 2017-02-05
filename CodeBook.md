@@ -11,7 +11,9 @@ The project data set can be found at https://d396qusza40orc.cloudfront.net/getda
 Source datasets went through several transformations getting at the end two tidy data sets, final_set and final_set_averages, following lines explained the insight on the different transformation conducted on the source data.
 
 The fist step was to merge the training and the test datasets into one data set. Likewise, the 30 volunteers conducting the testing and training experiments were merge into one datasets. The result of this initial transformations are the following datasets:
+
 data_x: Output dataset after merging training and test source datasets, getting a dataset with 10,299 observations for 561 variables (ie. features); it is a dataframe with 10,299 rows and 561 columns.
+
 data_y: Output dataset that includes for each of the 10,299 observations what activity (ie. walking, walking_upstairs, walking_downstairs, sitting, standing, laying) was the volunteer conducting. The activities are codified as follows:
 * 1: walking
 * 2: walking_upstairs
@@ -19,13 +21,18 @@ data_y: Output dataset that includes for each of the 10,299 observations what ac
 * 4: sitting
 * 5: standing
 * 6: laying
+
 set_subject: Output dataset that includes for each of the 10,299 observations what volunteer were conducting the observation. Volunteers are code from 1 to 30. This dataset is a dataframe with 10,299 rows and 1 column.
+
 The next transformation conducted was to leave only the variables associated to mean and the standard deviation, getting the following dataset:
+
 * subset_mean_std: Output dataset including for each of the 10,299 observations only the variables having to do with the mean and standard deviation. This dataset is a dataframe of 10,299 rows and 66 columns.
 After previous transformation, the data_y dataset is transformed to give every observation the proper naming (ie. walking, walking_upstairs, walking_downstairs, sitting, standing, laying)based on the activities coding.  This dataset is a table of 10,299 rows and 1 column.
 Up to this point there are three different datasets as follows: set_subject (10,299 x 1), subset_mean_std (10,299 x 66) and data_y (10,299 x 1).
 The last step to get one of the tidy datasets (ie. final_set) is to merge the three datasets mentioned above into one and give the proper naming format; for the latter proper naming was giving to variables, for instance “Acc” was changed for “Acceleration”, “Mag” for “Magnitud” and so forth, getting the following dataset:
+
 * final_set:  One of the final datasets for the project which has 10,299 observations for 68 variables (ie. 66 features associated to mean and standard deviation plus the volunteers id and the activities name). This dataset is a dataframe of 10,299 rows and 68 columns, below the names of each column, naming has been given so that it self-explains as follows:
+
 * [1] "TimeDomain.BodyAcceleration.Mean...X"                                    
 * [2] "TimeDomain.BodyAcceleration.Mean...Y"                                    
 * [3] "TimeDomain.BodyAcceleration.Mean...Z"                                    
