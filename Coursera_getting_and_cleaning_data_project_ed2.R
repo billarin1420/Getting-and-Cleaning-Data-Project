@@ -66,4 +66,4 @@ final_set_averages<-final_set_averages[order(final_set_averages$Subject,final_se
 View (final_set_averages)
 write.csv(final_set_averages, file = "final_set_averages.csv")
 
-## End
+## End of script
