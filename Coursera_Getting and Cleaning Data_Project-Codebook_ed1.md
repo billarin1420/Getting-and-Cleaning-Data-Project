@@ -1,10 +1,12 @@
 #Coursera Getting and Cleaning Data: Codebook
-It is the codebook for the course project ìGetting and Cleaning Dataî.
+It is the codebook for the course project ‚ÄúGetting and Cleaning Data‚Äù.
 ##1. Source Data Set
-Description below about the source data set information for the project was literally taken from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Description below about the source raw data for the project was literally taken from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 The project data set can be found at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 ## Output: Tidy Datasets
 Source datasets went through several transformations getting at the end two tidy data sets, final_set and final_set_averages, following lines explained the insight on the different transformation conducted on the source data.
 
@@ -22,7 +24,7 @@ The next transformation conducted was to leave only the variables associated to 
 * subset_mean_std: Output dataset including for each of the 10,299 observations only the variables having to do with the mean and standard deviation. This dataset is a dataframe of 10,299 rows and 66 columns.
 After previous transformation, the data_y dataset is transformed to give every observation the proper naming (ie. walking, walking_upstairs, walking_downstairs, sitting, standing, laying)based on the activities coding.  This dataset is a table of 10,299 rows and 1 column.
 Up to this point there are three different datasets as follows: set_subject (10,299 x 1), subset_mean_std (10,299 x 66) and data_y (10,299 x 1).
-The last step to get one of the tidy datasets (ie. final_set) is to merge the three datasets mentioned above into one and give the proper naming format; for the latter proper naming was giving to variables, for instance ìAccî was changed for ìAccelerationî, ìMagî for ìMagnitudî and so forth, getting the following dataset:
+The last step to get one of the tidy datasets (ie. final_set) is to merge the three datasets mentioned above into one and give the proper naming format; for the latter proper naming was giving to variables, for instance ‚ÄúAcc‚Äù was changed for ‚ÄúAcceleration‚Äù, ‚ÄúMag‚Äù for ‚ÄúMagnitud‚Äù and so forth, getting the following dataset:
 * final_set:  One of the final datasets for the project which has 10,299 observations for 68 variables (ie. 66 features associated to mean and standard deviation plus the volunteers id and the activities name). This dataset is a dataframe of 10,299 rows and 68 columns, below the names of each column, naming has been given so that it self-explains as follows:
 * [1] "TimeDomain.BodyAcceleration.Mean...X"                                    
 * [2] "TimeDomain.BodyAcceleration.Mean...Y"                                    
