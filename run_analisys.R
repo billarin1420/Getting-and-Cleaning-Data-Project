@@ -16,9 +16,7 @@ test_y = read.table('./test/y_test.txt',header=FALSE)
 data_x <- rbind(train_x, test_x)
 data_y <- rbind(train_y, test_y)
 set_subject <- rbind(train_subject, test_subject)
-dim(data_x)
-dim(data_y)
-dim(set_subject)
+
 
 ## 2)Routine to extract only the measurements on the mean and standard deviation for each measurement.
 
@@ -26,21 +24,19 @@ index_mean_std<- grep("-(mean|std)\\(\\)", read.table("features.txt")[, 2])
 subset_mean_std<-data_x[,index_mean_std]
 index_features_names<- grep("-(mean|std)\\(\\)", read.table("features.txt")[, 2])
 names(subset_mean_std) <- read.table("features.txt")[index_features_names, 2] 
-View(subset_mean_std)
-dim(subset_mean_std)
+
 
 ##  3)Routine to use descriptive activity names to name the activities in the data set.
 
 data_y[, 1] <- read.table("activity_labels.txt")[data_y[, 1], 2]
 names(data_y)<-"Activities"
-View(data_y)
+
 
 ## 4) Routine to appropriately labels the data set with descriptive variable names.
 ## Also to create a sole, final and clean data set, giving proper naming format to variables
 
 ## Routing to create a single data set
 names(set_subject)<-"Subject"
-View(set_subject)
 final_set <- cbind(subset_mean_std, data_y, set_subject)
 
 # Routine to give the proper naming format
